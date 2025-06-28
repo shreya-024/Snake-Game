@@ -63,6 +63,7 @@ Avoid hitting your own body.
 Press Space to restart after Game Over.
 
 💡 Highlights
+
 Uses OpenCV to process real-time video from your webcam.
 
 Snake and food are overlaid as PNG images for a rich game feel.
