@@ -38,7 +38,6 @@ pip install opencv-python cvzone pygame numpy
 Make sure the following files are in your working directory:
 
 ```
-
 main.py
 snake.png
 banana.png
@@ -49,6 +48,7 @@ gameOver.wav
 score.txt   # Create with a starting value of 0
 ```
 ▶️ How to Play
+
 Run the game:
 
 ```bash
