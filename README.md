@@ -1,74 +1,74 @@
-# 🐍 Hand-Controlled Snake Game 🎮
+# 🐍 Hand-Tracked Snake Game
 
-An interactive Snake Game controlled by your **index finger**, using webcam input! Built with **OpenCV**, **CvZone**, **Pygame**, and **Hand Tracking Module**. Eat the food, grow longer, and avoid crashing into yourself!
-
----
-
-## ✨ Features
-
-- 🖐️ Control the snake using your **index finger**
-- 🍎 Random food items: apple, banana, and donut
-- 🔊 Sound effects for eating food and game over
-- 🧠 Smart collision detection
-- 💾 Persistent **high score** tracking
-- 🎨 Smooth UI using `cvzone.putTextRect` and image overlays
+A modern twist on the classic Snake game — play using just your index finger, tracked in real-time via your webcam! Built using Python, OpenCV, pygame, and cvzone.
 
 ---
 
-## 📦 Requirements
+## 🎮 Features
 
-Make sure to install the following dependencies:
+- 🖐️ **Hand Gesture Control**: Move the snake using your index finger — no keyboard needed.
+- 🍎 **Multiple Food Types**: Randomly spawning banana, apple, and donut images.
+- 🐍 **Snake Growth Mechanism**: Each food increases your snake’s length.
+- 💥 **Game Over Logic**: Collision with the snake’s own body ends the game.
+- 🔊 **Sound Effects**: Fun sounds play when you eat or collide.
+- 🧠 **High Score Memory**: Highest score persists across sessions (stored in `score.txt`).
+- 📸 **Live Webcam Feed**: Integrated directly into gameplay using OpenCV.
+
+---
+
+## 🧰 Tech Stack
+
+- **Python**
+- **OpenCV** – for webcam access, frame processing, and drawing.
+- **cvzone** – for easy hand tracking and image overlays.
+- **pygame** – for handling sound effects.
+- **MediaPipe** (via cvzone) – for detecting and tracking the index finger.
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+Install dependencies:
 
 ```bash
 pip install opencv-python cvzone pygame numpy
-Also, ensure your webcam is working properly.
+```
+Make sure the following files are in your working directory:
 
-🚀 How to Run
-Clone this repository:
+```
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/hand-controlled-snake-game.git
-cd hand-controlled-snake-game
-Add the required files to the project directory:
-
-bash
-Copy
-Edit
-📁 hand-controlled-snake-game/
-│
-├── main.py
-├── score.txt               # Create this file manually and add 0 as initial content
-├── snake.png               # Snake head image (PNG)
-├── apple.png               # Food image
-├── banana.png              # Food image
-├── food.png                # Food image
-├── point.wav               # Sound effect on eating food
-└── gameOver.wav            # Sound effect on game over
+main.py
+snake.png
+banana.png
+apple.png
+food.png
+point.wav
+gameOver.wav
+score.txt   # Create with a starting value of 0
+```
+▶️ How to Play
 Run the game:
 
-bash
-Copy
-Edit
+```bash
 python main.py
-🎮 Controls
-Use your index finger to control the snake (tracked using webcam).
+```
+Use your index finger to move the snake.
 
-Eat food to increase your score and length.
+Eat food to grow and increase your score.
 
 Avoid hitting your own body.
 
-Press the spacebar to restart after Game Over.
+Press Space to restart after Game Over.
 
-🧠 How it Works
-Uses cvzone.HandTrackingModule to detect the index finger position in real-time.
+💡 Highlights
+Uses OpenCV to process real-time video from your webcam.
 
-Snake follows the finger, growing as it eats food.
+Snake and food are overlaid as PNG images for a rich game feel.
 
-Food is randomly selected from 3 options.
+Dynamic color snake trail based on length and movement.
 
-Score and highest score are displayed.
+High score is saved between runs using a simple text file.
 
-Collision with your own body ends the game.
-
+Clean and minimal interface with helpful instructions on-screen.
