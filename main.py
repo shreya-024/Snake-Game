@@ -50,13 +50,19 @@ class SnakeGameClass:
 
         if self.gameOver:
             
-            cvzone.putTextRect(imgMain, "Game Over", [320, 200])
-            cvzone.putTextRect(imgMain, f"Score: {self.score}", [320, 240])
+            cvzone.putTextRect(imgMain, "Game Over", [580, 200], scale=2,
+                   colorT=(255, 255, 255), colorR=(204, 0, 0))
+            cvzone.putTextRect(imgMain, f"Score: {self.score}", [600, 240], scale=2,
+                   colorT=(255, 255, 255), colorR=(204, 0, 0))
+
+            
             self.maxScore = max(self.maxScore,self.score)
             with open("score.txt", "w") as f:
                 f.write(str(self.maxScore))
-            cvzone.putTextRect(imgMain, "Press Space to Start Again!", [320, 300], scale = 2)
-            
+            cvzone.putTextRect(imgMain, "Press Space to Start Again!", [450, 300], scale=2,
+                   colorT=(0, 0, 0), colorR=(255, 255, 255))
+
+
         else:
             px, py = self.previousHead
             cx, cy = currentHead
@@ -84,7 +90,8 @@ class SnakeGameClass:
                 self.allowedLength += 20
                 self.score += 1
                 print(self.score)
-            cvzone.putTextRect(imgMain, f"Score: {self.score}", [1200, 20], scale = 1, thickness = 2, colorT = (225, 0, 225), colorR = (225, 225, 225))
+            cvzone.putTextRect(imgMain, f"Score: {self.score}", [1200, 20], scale=1, thickness=2,
+                   colorT=(255, 255, 255), colorR=(0, 102, 204))
 
             #Draw Snake
             if self.points:
@@ -115,7 +122,8 @@ class SnakeGameClass:
                 self.previousHead = 0, 0 #previous head point
                 self.randomFoodLocation()  
 
-        cvzone.putTextRect(imgMain, f"Highest Score: {self.maxScore}", [0, 20], scale = 1, thickness = 2, colorT = (225, 0, 225), colorR = (225, 225, 225))
+        cvzone.putTextRect(imgMain, f"Highest Score: {self.maxScore}", [0, 20], scale=1, thickness=2,
+                   colorT=(255, 255, 255), colorR=(51, 153, 102))
 
         return imgMain
 
@@ -130,6 +138,9 @@ while True:
         print("Failed to grab frame from camera")
         break
     img = cv2.flip(img,1)
+    cvzone.putTextRect(img, "Use your INDEX finger to move the Snake", [500, 20], scale=1, thickness=2,
+                   colorT=(255, 255, 255), colorR=(0, 0, 0))
+
     hands, img = detector.findHands(img, flipType=False)
     
     if hands:
