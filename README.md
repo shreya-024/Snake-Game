@@ -33,7 +33,7 @@ A modern twist on the classic Snake game — play using just your index finger, 
 Install dependencies:
 
 ```bash
-pip install opencv-python cvzone pygame numpy
+pip install opencv-python cvzone pygame numpy mediapipe
 ```
 Make sure the following files are in your working directory:
 
