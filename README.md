@@ -18,7 +18,7 @@ A modern twist on the classic Snake game — play using just your index finger, 
 
 ## 🧰 Tech Stack
 
-- **Python**
+- **Python 3.11 (MediaPipe supported versions: Python 3.9, 3.10, 3.11, 3.12)**
 - **OpenCV** – for webcam access, frame processing, and drawing.
 - **cvzone** – for easy hand tracking and image overlays.
 - **pygame** – for handling sound effects.
@@ -34,6 +34,7 @@ Install dependencies:
 
 ```bash
 pip install opencv-python cvzone pygame numpy
+pip install mediapipe==0.10.9
 ```
 Make sure the following files are in your working directory:
 
